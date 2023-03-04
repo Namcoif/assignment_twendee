@@ -10,7 +10,6 @@ const getListUsers = (numberPage = 1) => async (dispatch) => {
         console.log(response);
         dispatch({
             type: actionTypes.GET_LIST_USER_SUCCESS,
-            payload: response.data.results
         })
         return response.data.results
     } catch (error) {
