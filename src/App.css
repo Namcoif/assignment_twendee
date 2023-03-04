@@ -1,0 +1,15 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: 0;
+}
+
+.App {
+  text-align: center;
+}
+
+table,
+td,
+th {
+  border: 1px solid black;
+}
