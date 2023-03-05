@@ -10,18 +10,18 @@ function UserDetailsList(props) {
     const selector = useSelector(state => state);
 
     const [listUsers, setListUsers] = useState([])
-    const [numberPage, setNumberPage] = useState(1)
+    const [pageNumber, setPageNumber] = useState(1)
     const [status, setStatus] = useState('');
 
-    const _changeNumberPage = (numberPage) => {
-        setNumberPage(numberPage)
+    const _changePageNumber = (pageNumber) => {
+        setPageNumber(pageNumber)
     }
 
     useEffect(() => {
-        dispatch(userActions.getListUsers(numberPage)).then((res) => {
+        dispatch(userActions.getListUsers(pageNumber)).then((res) => {
             setListUsers(res)
         })
-    }, [numberPage])
+    }, [pageNumber])
 
     useEffect(() => {
         setStatus(selector.user.statusGet)
@@ -32,7 +32,7 @@ function UserDetailsList(props) {
             <span>Status: {status}</span>
             <Pagination
                 data={listUsers}
-                changePage={_changeNumberPage}
+                changePage={_changePageNumber}
             />
         </div>
     );
