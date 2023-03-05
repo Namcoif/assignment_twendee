@@ -1,7 +1,6 @@
 import actionTypes from "../constant/constant";
 
 const initialState = {
-    listUsers: [],
     statusGet: 'request'
 }
 
@@ -20,7 +19,6 @@ const userReducers = (state = initialState, action) => {
         case actionTypes.GET_LIST_USER_SUCCESS:
             return {
                 ...state,
-                listUsers: action.payload,
                 statusGet: 'Get list successfully!'
             }
 
